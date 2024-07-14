@@ -1,0 +1,243 @@
+:root {
+    --main-color: #fef3e0;
+    --second-color: #638889;
+    --third-color: #9DBC98;
+    --fourth-color: #6e9798;
+}
+
+
+body {
+    background-color: var(--main-color);
+    font-family: "Playwrite GB J", cursive;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 50px;
+    color: --;
+    font-family: "Playwrite IN", cursive;
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 30px;
+    }
+}
+
+a.custom-reset {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.1s ease-in-out;
+}
+
+a.custom-reset:hover,
+a.custom-reset:focus,
+a.custom-reset:active {
+    color: var(--third-color);
+    text-decoration: none;
+}
+
+/* Start Navbar */
+aside {
+    left: -200px;
+    top: 0;
+    z-index: 1;
+}
+
+.nav-box {
+    color: white;
+    width: 200px;
+    background-color: var(--second-color);
+    font-size: 20px;
+}
+
+.nav-menu {
+    overflow: hidden;
+}
+
+.nav-menu li {
+    padding: 10px 0px;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    font-size: 18px;
+}
+
+.nav-menu li:hover {
+    transform: translateX(5px);
+    color: var(--third-color);
+}
+
+.nav-menu li.active {
+    color: var(--third-color);
+}
+
+.nav-menu li i {
+    margin-right: 10px;
+}
+
+.developer-info {
+
+    font-family: "Nunito Sans", sans-serif;
+}
+
+.slider {
+    width: 60px;
+    background-color: var(--fourth-color);
+    position: relative;
+    color: white;
+}
+
+@media (max-width: 576px) {
+    .slider {
+        width: 30px;
+    }
+}
+
+.slider .arrow {
+    background-color: var(--fourth-color);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 40%
+}
+
+@media (max-width: 576px) {
+    .slider .arrow {
+        width: 50px;
+        height: 50px;
+        left: 20%
+    }
+}
+
+.slider .arrow i {
+    font-size: 20px;
+    position: relative;
+    left: 12%;
+}
+
+@media (max-width: 576px) {
+    .slider .arrow i {
+        font-size: 15px;
+    }
+}
+
+.slider .arrow i :hover {
+    color: var(--third-color);
+}
+
+.logo {
+    width: 35px;
+}
+
+@media (max-width: 576px) {
+    .logo {
+        width: 25px;
+    }
+}
+
+/* End Navbar */
+/* Red Checkered */
+.red-checkered {
+    position: relative;
+    width: 100%;
+    height: 25px;
+    background: url("../imgs/Tablecloth.jpg");
+    background-size: 900px;
+    left: 0;
+}
+
+.red-checkered.top {
+    top: 0;
+}
+
+/* .red-checkered.bottom {
+    bottom: 0;
+} */
+
+/* Start Loader */
+#loader {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--second-color);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: auto;
+    position: relative;
+    background: #222;
+    border-radius: 50%;
+    box-sizing: border-box;
+    transform-origin: 170px 50px;
+    border: 4px solid #333;
+    box-shadow: 3px 4px #0003 inset, 0 0 6px #0002 inset;
+    animation: panmov 0.4s ease-in-out infinite alternate;
+}
+
+.loader::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) skew(-15deg, 15deg) rotate(-15deg);
+    width: 55px;
+    height: 53px;
+    background: #fff;
+    background-image:
+        radial-gradient(circle 3px, #fff6 90%, transparent 10%),
+        radial-gradient(circle 12px, #ffc400 90%, transparent 10%),
+        radial-gradient(circle 12px, #ffae00 100%, transparent 0);
+    background-repeat: no-repeat;
+    background-position: -4px -6px, -2px -2px, -1px -1px;
+    box-shadow: -2px -3px #0002 inset, 0 0 4px #0003 inset;
+    border-radius: 47% 36% 50% 50% / 49% 45% 42% 44%;
+    animation: ylmov 0.6s ease-in-out infinite alternate;
+}
+
+.loader::after {
+    content: '';
+    position: absolute;
+    left: 100%;
+    top: 48px;
+    height: 15px;
+    width: 70px;
+    background: #222222;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 3px 0 3px #eee2 inset;
+    transform: rotate(5deg) translateX(3px);
+}
+
+@keyframes panmov {
+
+    0%,
+    10% {
+        transform: rotate(5deg)
+    }
+
+    90%,
+    100% {
+        transform: rotate(-5deg)
+    }
+}
+
+@keyframes ylmov {
+    to {
+        border-radius: 50% 36% 50% 50% / 49% 50% 45% 45%;
+        background-position: -2px -4px, 2px 2px, 1px 1px;
+    }
+}
+
+/* End Loader */
