@@ -44,7 +44,7 @@ $(document).ready(function () {
                 <img class="w-100 rounded-2" src="${data.meals[0].strMealThumb}" alt="">
             </div>
             <h3 class="text-center mt-5 fw-bolder ">${data.meals[0].strMeal}</h3>
-            <div class="buttons d-flex flex-column justify-content-center align-items-center mt-4 ">
+            <div class="buttons d-flex flex-column justify-content-center align-items-center mt-4 mb-5">
                 <a href="${data.meals[0].strYoutube}" target="_blank" class="custom-reset"><button class="btn rounded-3 mt-3"><i
                         class="fa-brands fa-youtube me-3"></i>Watch on YouTube</button></a>
                 <a href="${data.meals[0].strSource}" target="_blank" class="custom-reset"><button class="btn rounded-3 mt-3"><i class="fa-solid fa-arrow-up-right-from-square me-3"></i></i>Source</button></a>
