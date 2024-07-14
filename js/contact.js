@@ -81,9 +81,10 @@ $(document).ready(function () {
 
         // Check if all inputs are valid
         if (isValidName && isValidEmail && isValidAge && isValidPhone && isValidPassword && isValidRePassword) {
-            $(".text-success").removeClass("d-none").text("Form submitted successfully.");
+            $(".error-message").removeClass("d-none").addClass("text-success").text("Form submitted successfully.");
+
         } else {
-            $(".text-success").addClass("d-none");
+            $(".error-message").removeClass("d-none").addClass("text-danger").text("please fill all required fields correctly.");
         }
     });
 });
