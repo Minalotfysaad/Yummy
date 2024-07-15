@@ -3,8 +3,8 @@ $(document).ready(function () {
     function hideLoader() {
         $("#loader .loader").fadeOut(500, function () {
             $("#loader").fadeOut(500, function () {
-                $("#loader").remove();
                 $("body").css("overflow", "auto");
+                $("#loader").remove();
             });
         });
     }
