@@ -60,6 +60,9 @@ aside {
     cursor: pointer;
     transition: all 0.1s ease-in-out;
     font-size: 18px;
+    display: block; 
+    opacity: 0; 
+    margin-top: 50px; 
 }
 
 .nav-menu li:hover {
