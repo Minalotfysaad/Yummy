@@ -154,10 +154,14 @@ aside {
     top: 0;
 }
 
-/* .red-checkered.bottom {
-    bottom: 0;
-} */
-
+/* Start Content */
+@media (max-width: 576px) {
+    #content{
+        width: calc(100% - 30px);
+        margin-left: 30px;
+    }
+}
+/* End Content */
 /* Start Loader */
 #loader {
     position: fixed;

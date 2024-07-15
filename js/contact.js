@@ -1,16 +1,14 @@
 $(document).ready(function () {
-        // Hide loader function
-        
-
-        function hideLoader() {
-            $("#innerLoader .loader").fadeOut(500, function () {
-                $("#innerLoader").fadeOut(0, function () {
-                    $("#loader").remove();
-                    $("body").css("overflow", "auto");
-                });
+    // Hide loader function
+    function hideLoader() {
+        $("#innerLoader .loader").fadeOut(500, function () {
+            $("#innerLoader").fadeOut(0, function () {
+                $("#loader").remove();
+                $("body").css("overflow", "auto");
             });
-        }
-    
+        });
+    }
+
     // Function to validate input
     function validateInput(input, regex) {
         const isValid = regex.test(input.val());
@@ -21,7 +19,14 @@ $(document).ready(function () {
             input.removeClass("is-valid").addClass("is-invalid");
             input.next("small").removeClass("d-none"); // Show error message
         }
+        checkAllValid();
         return isValid;
+    }
+
+    // Check if all inputs are valid
+    function checkAllValid() {
+        const allValid = $(".form-control").toArray().every(input => $(input).hasClass("is-valid"));
+        $(".submit-button").prop("disabled", !allValid);
     }
 
     // Regex patterns
@@ -66,6 +71,7 @@ $(document).ready(function () {
             $(this).removeClass("is-valid").addClass("is-invalid");
             $(this).next("small").removeClass("d-none"); // Show error message
         }
+        checkAllValid();
     });
 
     // Form submission handling
@@ -83,10 +89,11 @@ $(document).ready(function () {
         // Check if all inputs are valid
         if (isValidName && isValidEmail && isValidAge && isValidPhone && isValidPassword && isValidRePassword) {
             $(".error-message").removeClass("d-none").addClass("text-success").text("Form submitted successfully.");
-
         } else {
             $(".error-message").removeClass("d-none").addClass("text-danger").text("please fill all required fields correctly.");
         }
     });
+
     hideLoader();
 });
+M

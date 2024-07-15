@@ -71,7 +71,7 @@ $(document).ready(function () {
                 const flagUrl = getFlagUrl(country);
                 if (flagUrl) {
                     content += `
-                    <div class=" col-md-2">
+                    <div class=" col-md-2 col-6">
                         <div id="${country}" class="recipe">
                             <div class="recipe-image">
                                 <img class="w-100" src="${flagUrl}" alt="">
