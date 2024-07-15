@@ -1,16 +1,14 @@
-$(document).ready(function () {
-    //Loader
-    function hideLoader() {
-        $(document).ready(function () {
-            $("#innerLoader .loader").fadeOut(500, function () {
-                $("#innerLoader").fadeOut(0, function () {
-                    $("#loader").remove();
-                    $("body").css("overflow", "auto");
-                });
+//Loader hide function
+function hideLoader() {
+    $(document).ready(function () {
+        $("#innerLoader .loader").fadeOut(500, function () {
+            $("#innerLoader").fadeOut(0, function () {
+                $("#loader").remove();
+                $("body").css("overflow", "auto");
             });
         });
-    }
-
+    });
+}
 
 // Functions
 var innerIngredientArray = [];
@@ -60,4 +58,4 @@ function getIdOnClick() {
         window.navigateToDetails(id);
     });
 }
-});
+

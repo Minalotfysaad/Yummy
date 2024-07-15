@@ -1,5 +1,4 @@
-$(document).ready(function () {
-    //Loader
+  //Loader
     function hideLoader() {
         $(document).ready(function () {
             $("#innerLoader .loader").fadeOut(500, function () {
@@ -58,4 +57,3 @@ function getIdOnClick() {
         window.navigateToDetails(id);
     });
 }
-});

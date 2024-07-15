@@ -1,4 +1,4 @@
-$(document).ready(function () {
+
     //Loader
     function hideLoader() {
         $(document).ready(function () {
@@ -58,4 +58,3 @@ function getIdOnClick() {
         window.navigateToDetails(id);
     });
 }
-});
