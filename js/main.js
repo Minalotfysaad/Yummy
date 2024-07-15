@@ -92,10 +92,13 @@ function openAside() {
     $("aside").animate({ left: 0 }, 500); // Open
     $(".arrow i").animate({ rotate: "180deg" }, 500);
 
-    // Slide up each nav-item with a delay and fade in
-    $(".nav-menu .nav-item").each(function(index) {
-        $(this).delay(100 * index).animate({ marginTop: 0, opacity: 1 }, 200);
-    });
+    // Add a 0.5s delay before starting the nav-items animation
+    setTimeout(function() {
+        // Slide up each nav-item with a delay and fade in
+        $(".nav-menu .nav-item").each(function(index) {
+            $(this).delay(100 * index).animate({ marginTop: 0, opacity: 1 }, 200);
+        });
+    }, 300);
 }
 
 // Function to close aside
