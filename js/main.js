@@ -98,7 +98,7 @@ function openAside() {
         $(".nav-menu .nav-item").each(function(index) {
             $(this).delay(100 * index).animate({ marginTop: 0, opacity: 1 }, 200);
         });
-    }, 300);
+    }, 200);
 }
 
 // Function to close aside
@@ -106,10 +106,9 @@ function closeAside() {
     let navBoxWidth = $(".nav-box").outerWidth();
     $("aside").animate({ left: `-${navBoxWidth}px` }, 500); // Close
     $(".arrow i").animate({ rotate: "0deg" }, 500);
-
     // Slide down each nav-item with a delay and fade out
     $(".nav-menu .nav-item").each(function(index) {
-        $(this).delay(100 * index).animate({ marginTop: "50px", opacity: 0 }, 200);
+        $(this).delay(50 * index).animate({ marginTop: "50px", opacity: 0 }, 200);
     });
 }
 
