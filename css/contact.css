@@ -67,7 +67,8 @@ a.custom-reset:active {
 
 @media (max-width: 576px) {
     .contact-box {
-        width: 100%;
+        width: calc(100% - 30px) !important;
+        margin-left: 30px;
         position: relative;
         top: auto;
         left: auto;
@@ -93,7 +94,7 @@ a.custom-reset:active {
 
 @media (max-width: 576px) {
     .frame {
-        border: 5px solid var(--second-color);
+        border: none;
         padding: 20px;
         position: static;
         top: 0px;
