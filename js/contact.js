@@ -1,10 +1,11 @@
 $(document).ready(function () {
         // Hide loader function
-        hideLoader();
+        
 
         function hideLoader() {
             $("#innerLoader .loader").fadeOut(500, function () {
                 $("#innerLoader").fadeOut(0, function () {
+                    $("#loader").remove();
                     $("body").css("overflow", "auto");
                 });
             });
@@ -87,4 +88,5 @@ $(document).ready(function () {
             $(".error-message").removeClass("d-none").addClass("text-danger").text("please fill all required fields correctly.");
         }
     });
+    hideLoader();
 });

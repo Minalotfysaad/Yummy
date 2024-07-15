@@ -1,11 +1,13 @@
 $(document).ready(function () {
     //Loader
-    $("#loader .loader").fadeOut(500, function () {
-        $("#loader").fadeOut(500, function () {
-            $("#loader").remove();
-            $("body").css("overflow", "auto");
+    function hideLoader() {
+        $("#loader .loader").fadeOut(500, function () {
+            $("#loader").fadeOut(500, function () {
+                $("#loader").remove();
+                $("body").css("overflow", "auto");
+            });
         });
-    });
+    }
     // Initialize home page
     loadContent("home.html");
 
@@ -15,6 +17,7 @@ $(document).ready(function () {
             url: url,
             success: function (data) {
                 $("#content").html(data);
+                hideLoader();
                 if (url === "home.html") {
                     getHomeRecipe(" ");
                 }
@@ -41,7 +44,6 @@ $(document).ready(function () {
             },
         });
     }
-
     // Function to get ID from URL
     function getIdFromUrl() {
         const urlParams = new URLSearchParams(window.location.search);
@@ -121,7 +123,7 @@ function navigateToInnerIngredient(ingId) {
     navItemHandler("areas");
     navItemHandler("ingredients");
     navItemHandler("contact");
-});
+
 // API functions
 async function getRecipeById(id) {
     try {
@@ -159,3 +161,4 @@ async function searchRecipeByLetter(recipe) {
         // Handle error
     }
 }
+});

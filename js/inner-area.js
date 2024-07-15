@@ -1,14 +1,15 @@
 $(document).ready(function () {
-    $("#innerLoader .loader").fadeOut(500, function () {
-        $("#innerLoader").fadeOut(500, function () {
-            $("#innerLoader").remove();
-            $("body").css("overflow", "auto");
+    //Loader
+    function hideLoader() {
+        $(document).ready(function () {
+            $("#innerLoader .loader").fadeOut(500, function () {
+                $("#innerLoader").fadeOut(0, function () {
+                    $("#loader").remove();
+                    $("body").css("overflow", "auto");
+                });
+            });
         });
-    });
-});
-
-//Loader
-
+    }
 // Functions
 var innerAreaArray = [];
 async function getInnerArea(areaId) {
@@ -47,6 +48,7 @@ function displayInnerArea() {
             </div>`;
     }
     document.getElementById("rowData").innerHTML = content;
+    hideLoader();
     getIdOnClick();
 }
 
@@ -56,3 +58,4 @@ function getIdOnClick() {
         window.navigateToDetails(id);
     });
 }
+});

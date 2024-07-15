@@ -25,6 +25,7 @@ $(document).ready(function () {
         ``;
         if ($(this).val().length > 0) {
             searchedTerm = $(this).val();
+            showLoader();
             searchRecipeByName(searchedTerm);
         } else {
             // Clear the search results if the input is empty
@@ -39,10 +40,10 @@ $(document).ready(function () {
                 `https://www.themealdb.com/api/json/v1/1/search.php?s=${recipe}`
             );
             var data = await response.json();
-            recipesArray = data.meals || [];
+            recipesArray = data.meals;
             displayRecipe();
         } catch (error) {
-            // Handle error
+            hideLoader();
         }
     }
 
@@ -50,6 +51,7 @@ $(document).ready(function () {
     $(".search-inputs #searchByLetterInput").keyup(function () {
         if ($(this).val().length > 0) {
             searchedTerm = $(this).val();
+            showLoader();
             searchRecipeByLetter(searchedTerm);
         } else {
             // Clear the search results if the input is empty
@@ -65,10 +67,10 @@ $(document).ready(function () {
                 `https://www.themealdb.com/api/json/v1/1/search.php?f=${recipe}`
             );
             var data = await response.json();
-            recipesArray = data.meals || [];
+            recipesArray = data.meals;
             displayRecipe();
         } catch (error) {
-            // Handle error
+            hideLoader();
         }
     }
 
@@ -99,6 +101,7 @@ $(document).ready(function () {
             </div>`;
             }
             document.getElementById("rowData").innerHTML = content;
+            hideLoader();
             getIdOnClick();
         }
     }

@@ -1,11 +1,17 @@
 // Functions
 $(document).ready(function () {
-    $("#innerLoader .loader").fadeOut(500, function () {
-        $("#innerLoader").fadeOut(500, function () {
-            $("#innerLoader").remove();
-            $("body").css("overflow", "auto");
+    //Loader
+    function hideLoader() {
+        $(document).ready(function () {
+            $("#innerLoader .loader").fadeOut(500, function () {
+                $("#innerLoader").fadeOut(0, function () {
+                    $("#loader").remove();
+                    $("body").css("overflow", "auto");
+                });
+            });
         });
-    });
+    }
+
     async function getRecipeById(id) {
         try {
             var response = await fetch(
@@ -29,7 +35,6 @@ $(document).ready(function () {
                 break;
             }
         }
-
         var tagsHTML = "";
         if (data.meals[0].strTags) {
             const tagsArray = data.meals[0].strTags.split(",");
@@ -37,7 +42,6 @@ $(document).ready(function () {
                 .map((tag) => `<li class="me-2">${tag.trim()}</li>`)
                 .join("");
         }
-
         var content = `
         <div class="col-md-4">
             <div class="image">
@@ -67,6 +71,7 @@ $(document).ready(function () {
             </ul>
         </div>`;
         document.getElementById("rowDetails").innerHTML = content;
+        hideLoader();
     }
 
     // Get recipe ID from URL
