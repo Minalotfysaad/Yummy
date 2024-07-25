@@ -28,9 +28,7 @@ $(document).ready(function () {
         var ingredientsHTML = "";
         for (let i = 1; i <= 30; i++) {
             if (data.meals[0][`strIngredient${i}`]) {
-                ingredientsHTML += `<li class="me-2">${
-                    data.meals[0][`strIngredient${i}`]
-                }</li>`;
+                ingredientsHTML += `<li class="me-2">${data.meals[0][`strMeasure${i}`]} ${data.meals[0][`strIngredient${i}`]}</li>`;
             } else {
                 break;
             }
@@ -65,7 +63,7 @@ $(document).ready(function () {
             </ul>
             <div class="tags-box d-flex align-items-center">
                 <h5 class=" fw-bolder">Tags: </h5>
-                <ul class="tags list-unstyled d-flex p-2 flex-wrap">
+                <ul class="tags list-unstyled d-flex p-3 flex-wrap">
                     ${tagsHTML}
             </div>
             </ul>
